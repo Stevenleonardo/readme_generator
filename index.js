@@ -1,14 +1,57 @@
 
 // Require all npm packages and files
-
-const questions = [
-// questions to user using "enquirer"
-];
+ const fs = require("fs");
+ const util = require("util");
+ const axio = require("axios");
+ var inquirer = require('inquirer');
 
 function init() {
+    inquirer
+    .prompt([
+        {   
+            type: "input",
+            message: "What is your Github username?",
+            name: "username"
+        },
+        {
+            type: "input",
+            message: "Project title",
+            name: "title"
+        },
+        {
+            type: "input",
+            message: "Project Description",
+            name: "description"
+        },
+        {
+            type: "input",
+            message: "installations needed",
+            name: "installations"
+        },
+        {
+            type: "input",
+            message: "Usage",
+            name: "usage"
+        },
+        {  type: "input",
+            message: "License",
+            name: "license"
 
-// Logic for this app shoud be here. You can create more functions if you like. This is just a template for you to start your Homework but it is not required for you to use it.
+        },
+        {  type: "input",
+            message: "Contributing",
+            name: "contributing"
 
+        },
+        {  type: "input",
+            message: "Test",
+            name: "test"
+
+        },
+    ])
+    .then(answers => {
+      // Use user feedback for... whatever!!
+    })
 }
 
 init();
