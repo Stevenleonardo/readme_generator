@@ -62,8 +62,8 @@ function generateMarkdown(answers) {
   
   ## Badges
   
- (https://img.shields.io/github/license/stevenleonardo/readme_generator)
- (https://img.shields.io/badge/license-MIT-blue.svg)
+ 
+ [![(Github license)](https://img.shields.io/badge/license-${answers.license}-blue.svg)](${answers.html_url})
   
   ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
   
