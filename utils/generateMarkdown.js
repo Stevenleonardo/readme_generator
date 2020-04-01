@@ -1,8 +1,14 @@
 function generateMarkdown(answers) {
   return `
-  # ${answers.title}
+  #Avatar
 
-  ## ${answers.description} 
+  ${answers.avatar_url}
+
+  #title
+  ${answers.title}
+
+  ##description
+  ${answers.description} 
   
   Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
   
@@ -26,13 +32,13 @@ function generateMarkdown(answers) {
   * [Credits](#credits)
   * ${answers.license}
   
-  
-  ## ${answers.installations}
+    ##installations
+   ${answers.installations}
   
   What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
   
-  
-  ## ${answers.usage} 
+    ##usage
+   ${answers.usage} 
   
   Provide instructions and examples for use. Include screenshots as needed. 
   
@@ -47,8 +53,6 @@ function generateMarkdown(answers) {
   
   
   
-  ## ${answers.usage}
-  
   The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
   
   
@@ -58,16 +62,19 @@ function generateMarkdown(answers) {
   
   ## Badges
   
+ (https://img.shields.io/github/license/stevenleonardo/readme_generator)
+ (https://img.shields.io/badge/license-MIT-blue.svg)
+  
   ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
   
   Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
   
-  
-  ## ${answers.contributing}
+  ##contributing
+  ${answers.contributing}
   
   If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
-  
-  ## ${answers.test}
+  ##test
+   ${answers.test}
   
   Go the extra mile and write tests for your application. Then provide examples on how to run them.
   
