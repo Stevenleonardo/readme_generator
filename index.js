@@ -1,10 +1,9 @@
 
 // Require all npm packages and files
  const fs = require("fs");
- const util = require("util");
- const axio = require("axios");
- var inquirer = require('inquirer');
-
+ const axios = require("axios");
+ const inquirer = require('inquirer');
+ const generate = require("./utils/generateMarkdown");
 function init() {
     inquirer
     .prompt([
@@ -44,14 +43,25 @@ function init() {
 
         },
         {  type: "input",
-            message: "Test",
+              message: "Test",
             name: "test"
 
         },
     ])
-    .then(answers => {
-      // Use user feedback for... whatever!!
+    .then(function (answers) {
+        const queryUrl = `https://api.github.com/users/${answers.username}`;
+        axios.get(queryUrl).then(function(response){
+            response.data.html_url = answers.html_url
+            response.data.avatar_url = answers.avatar_url
+            fs.writeFile('read.md', generate(answers), function (err) {
+                if (err) throw err;
+                console.log('Saved!');
+              });
+            
+        })
+
     })
+    
 }
 
 init();
